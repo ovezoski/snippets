@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" src="push.js">
+    </script>
+
+    <script type="text/javascript">
+
+      var intervalID = window.setInterval(function(){
+
+        Push.create('10 seconds have passed');
+
+      }, 10000);
+
+    </script>
+
+    <title></title>
+  </head>
+  <body>
+
+
+    <div class="jumbotron">
+
+    <button class="btn btn-block btn-primary" type="button" name="button" onclick="Push.create('I am notifying you!')"> Notify me </button>
+
+      <h1>
+        Iskra`s exampe for project "Implement web-app desktop push notifications for website"
+      </h1>
+
+    </div>
+
+  </body>
+</html>
