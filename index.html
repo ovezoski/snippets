@@ -2,34 +2,290 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script type="text/javascript" src="push.js">
-    </script>
+    <title>Range slider</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <script type="text/javascript">
 
-      var intervalID = window.setInterval(function(){
+      $(document).ready(function(){
 
-        Push.create('10 seconds have passed');
+        $('input').change(function (){
 
-      }, 10000);
+          var v1 = $("input[name=one]").val();
+          var v2 = $("input[name=two]").val();
+          var v3 = $("input[name=three]").val();
+
+          console.log(v1 + " " + v2 + " " + v3);
+
+          if(v1 == 3 && v3 == 3 && v2 == 1){
+            $('#answer').html("Thank you");
+          }else{
+            $('#answer').html("You should contact us");
+
+          }
+
+        });
+
+      });
 
     </script>
 
-    <title></title>
-  </head>
-  <body>
+<style media="screen">
+  input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 6.9px 0;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 20.2px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #00ff00;
+  border-radius: 12px;
+  border: 0px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0.9px 0.9px 15px #283531, 0px 0px 0.9px #33443e;
+  border: 8.9px solid #ffffff;
+  height: 34px;
+  width: 34px;
+  border-radius: 36px;
+  background: #f2f3f1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -6.9px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #00ff00;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 20.2px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #00ff00;
+  border-radius: 12px;
+  border: 0px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0.9px 0.9px 15px #283531, 0px 0px 0.9px #33443e;
+  border: 8.9px solid #ffffff;
+  height: 34px;
+  width: 34px;
+  border-radius: 36px;
+  background: #f2f3f1;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 20.2px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #00ff00;
+  border: 0px solid #010101;
+  border-radius: 24px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #00ff00;
+  border: 0px solid #010101;
+  border-radius: 24px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 0.9px 0.9px 15px #283531, 0px 0px 0.9px #33443e;
+  border: 8.9px solid #ffffff;
+  height: 34px;
+  width: 34px;
+  border-radius: 36px;
+  background: #f2f3f1;
+  cursor: pointer;
+  height: 20.2px;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #00ff00;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #00ff00;
+}
+
+</style>
+
+<style media="screen">
+  body{
+    color: #888 !important;
+  }
+
+  .question{
+    border: 2px solid #eee;
+    padding: 20px 10px;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+</style>
+
+        <link rel="stylesheet" href="rangeslider.css">
+
+  <div class="question">
+
+      <div class="row  justify-content-center">
+
+          <div class="col-12">
+            <h3 class="text-center">
+              How happy are you from our current services?
+            </h3>
+          </div>
+          <br><br>
+
+          <div class="form-group col-9 row">
+            <input class="btn-block" type="range" min="1" max="3" name="one">
+          </div>
+
+          <div class="row" style="width: 100%">
 
 
-    <div class="jumbotron">
 
-    <button class="btn btn-block btn-primary" type="button" name="button" onclick="Push.create('I am notifying you!')"> Notify me </button>
 
-      <h1>
-        Iskra`s exampe for project "Implement web-app desktop push notifications for website"
-      </h1>
+              <div  class='col-4'>
+                  <div class="btn btn-block btn-prdimary">
+                    Not happy
+                  </div>
+              </div>
 
-    </div>
+              <div  class='col-4'>
+                  <div class="btn btn-block btn-prdimary">
+                    Averagely happy
+                  </div>
+              </div>
+
+              <div  class='col-4'>
+                  <div class="btn btn-block btn-prdimary">
+                    Very happy
+                  </div>
+              </div>
+
+
+
+            </div>
+
+
+
+        </div>
+  </div>
+
+
+  <div class=" question">
+
+      <div class="row  justify-content-center">
+
+          <div class="col-12">
+            <h3 class="text-center">
+             Did you have any issues with our services?
+            </h3>
+          </div>
+          <br><br>
+
+          <div class="form-group col-9 row">
+            <input class="btn-block" type="range" min="1" max="3" name="two">
+          </div>
+
+          <div class="row" style="width: 100%">
+
+
+
+
+              <div  class='col-4'>
+                  <div class="btn btn-block btn-prdimary">
+                    A lot of issues
+                  </div>
+              </div>
+
+              <div  class='col-4'>
+                  <div class="btn btn-block btn-prdimary">
+                    Some issues
+                  </div>
+              </div>
+
+              <div  class='col-4'>
+                  <div class="btn btn-block btn-prdimary">
+                    No issues
+                  </div>
+              </div>
+
+
+
+            </div>
+
+
+
+        </div>
+  </div>
+
+
+  <div class=" question">
+
+      <div class="row  justify-content-center">
+
+          <div class="col-12">
+            <h3 class="text-center">
+              Are our serveces valuable to you?
+            </h3>
+          </div>
+          <br><br>
+
+          <div class="form-group col-9 row">
+            <input class="btn-block" type="range" min="1" max="3" name="three">
+          </div>
+
+          <div class="row" style="width: 100%">
+
+
+
+
+              <div  class='col-4'>
+                  <div class="btn btn-block btn-prdimary">
+                    No
+                  </div>
+              </div>
+
+              <div  class='col-4'>
+                  <div class="btn btn-block btn-prdimary">
+                    Moderately valuable
+                  </div>
+              </div>
+
+              <div  class='col-4'>
+                  <div class="btn btn-block btn-prdimary">
+                    Very valuable
+                  </div>
+              </div>
+
+
+
+            </div>
+
+
+
+        </div>
+  </div>
+
+  <div class="question text-center">
+    <h1 id="answer"></h1>
+  </div>
 
   </body>
 </html>
