@@ -1,6 +1,6 @@
 <?php
 header('Content-type: text/javascript');
-$key = "AIzaSyB6g2cfcRB1MOmonsfsHGl9CeRkQmaH2fM";
+$key = "YOUR_API_KEY_HERE";
 
 
   if(isset($_GET['lat']) && isset($_GET['lon'])){
