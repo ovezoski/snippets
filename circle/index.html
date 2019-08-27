@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+
+  </head>
+  <body>
+    <!-- Load d3.js -->
+  <script src="https://d3js.org/d3.v4.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+  <svg width="800" height="400" style="margin: auto; display: block"> </svg>
+<br>
+
+  <script type="text/javascript">
+
+
+
+    var data = [30, 50, 80];
+
+   var svg = d3.select("svg"),
+       width = svg.attr("width"),
+       height = svg.attr("height"),
+       radius = Math.min(width, height) / 2,
+       g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+   var color = d3.scaleOrdinal(['#4daf4a','#377eb8','#ff7f00','#984ea3','#e41a1c']);
+
+   // Generate the pie
+   var pie = d3.pie();
+
+   // Generate the arcs
+   var arc = d3.arc()
+               .innerRadius(radius-50)
+               .outerRadius(radius);
+
+   //Generate groups
+   var arcs = g.selectAll("arc")
+               .data(pie(data))
+               .enter()
+               .append("g")
+               .attr("class", "arc")
+
+   //Draw arc paths
+   arcs.append("path")
+       .attr("fill", function(d, i) {
+           return color(i);
+       })
+       .attr("d", arc);
+
+
+       $(function () {
+
+
+         $("#insert-deposit").click(function () {
+
+          var deposit = $("input[name=deposit]").val();
+
+          data.push(deposit);
+
+          $("svg > g").html(" ");
+
+          var arcs = g.selectAll("arc")
+                      .data(pie(data))
+                      .enter()
+                      .append("g")
+                      .attr("class", "arc")
+
+
+          arcs.append("path")
+              .attr("fill", function(d, i) {
+                  return color(i);
+              })
+              .attr("d", arc);
+
+          // alert(deposit);
+
+
+
+         });
+
+
+       });
+
+
+
+  </script>
+
+<div style="bsorder-radius: 10px; bosrder: 2px solid #ccc; padding: 20px; margin: auto; text-align: center">
+
+  <input type="number" name="deposit" style="padding: 10px; border-radius: 5px; border: 2px solid #ccc !important; width: 5%; margin: auto" >
+
+  <button style="background: #cad; padding: 10px; border-radius: 5px; border: none; margin:10px  auto" id="insert-deposit" type="button" name="button"> Insert deposit</button>
+
+</div>
+
+
+
+  </body>
+</html>
