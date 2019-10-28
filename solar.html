@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+
+    <style media="screen">
+
+        body {
+          background-image: url("https://cdn.vox-cdn.com/thumbor/x2GJ3jClNaae0_XQ6I0YnPuGKCQ=/0x0:5472x3648/1200x800/filters:focal(2299x1387:3173x2261)/cdn.vox-cdn.com/uploads/chorus_image/image/55802029/shutterstock_442832146.0.jpg");
+           background-size: cover;
+          background-color: #grey;
+          -webkit-font-smoothing: antialiased;
+          font-size: 1em;
+          text-align: center;
+      }
+      label{
+        margin: 0 5px;
+      }
+
+      .form{
+        position: relative;
+        background: rgb(0, 0, 0, 0.5);
+        color: #fff;
+        width: 80%;
+
+        margin: 40px auto;
+        border-radius: 2px;
+        padding: 2% 5%;
+        padding-bottom: 6%;
+      }
+      .form h2{
+        font-family: 'Oswald', cursive;
+
+        text-align: center;
+      }
+
+      input[type=number]{
+        background: rgba(200,200,200, 0.6);
+        color: white;
+        border: none;
+        padding: 10px;
+        width: 3cm;
+        text-align: center;
+      }
+
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input:focus, button:focus{
+        outline: 1px solid white;
+      }
+
+      input[type="radio"] {
+        -ms-transform: scale(1.5); /* IE 9 */
+        -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+        transform: scale(1.5);
+      }
+
+      .bottom{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        padding: 1%;
+        width: 100%;
+        border-top: 2px solid white;
+        background: rgb(200,200,200, 0.5);
+      }
+
+      .calculate{
+
+        background: #FF7A5A;
+        border-radius:2px;
+        color: white;
+        border: none;
+        padding: 10px 150px;
+
+      }
+      .form label{
+        margin: 0;
+        width: 40%;
+        text-align:right;
+      }
+      .form input{
+        text-align: left;
+
+      }
+
+    </style>
+
+    <div class="form">
+      <h2> Solar Instalation Calculator </h2>
+    <br>
+
+    <div class="form-row">
+
+      <div class="col-12 col-lg-4 py-3">
+        <label> Collectors number:</label>
+        <input name="number"  type="number">
+      </div>
+
+
+      <div class="col-12 col-lg-4 py-3">
+      <label> Height:</label>
+      <input name="height" type="number">
+      </div>
+
+
+      <div class="col-12 col-lg-4 py-3">
+      <label> Width:</label>
+      <input name="width" type="number">
+      </div>
+
+    </div>
+
+    <!--
+    <br><br>
+    <div class="form-group mx-5 text-left">
+      Collector type:
+      <div class="">
+        <input type="radio" name="" value="">
+        Tube
+      </div>
+    </div>
+     -->
+<br><br>
+     <div width="100">
+       <button type="button" class="calculate" id="calc" name="button">Calculate</button>
+     </div>
+
+
+     <div class="bottom">
+
+
+      <div class="col text-center">
+
+         <span style="font-size: 20px" id="price"></span>
+
+       </div>
+     </div>
+
+
+
+  </div>
+
+
+<script type="text/javascript">
+
+$("#calc").click(function(){
+
+  var height = $("input[name=height]").val();
+  var width = $("input[name=width]").val();
+  var number = $("input[name=number]").val();
+
+  var price = height*width*number;
+
+  $("#price").html("$"+price);
+
+});
+
+</script>
+
+  </body>
+</html>
