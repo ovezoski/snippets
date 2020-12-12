@@ -1,0 +1,206 @@
+*{
+  text-align: left;
+}
+
+html,body{
+  font-family: 'Pridi', sans-serif;
+  margin:0;
+  padding: 0;
+  font-size: 1.15em;
+  font-weight: 500;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+svg{
+  display: inline-block;
+  position: absolute;
+}
+small{
+  font-size: 0.6em;
+  font-weight: 300;
+}
+#input{
+  position:absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+#result{
+  display: none;
+  box-sizing: border-box;
+  border-bottom: 20px solid #2D877A;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 100%;
+}
+.center{
+  text-align:center;
+}
+
+.top-left-circle{
+  top: -30px;
+  left: 0;
+}
+.top-right-circle{
+  top: -30px;
+  right: 0;
+}
+.bottom-right-circle{
+  bottom: 0;
+  right: 0;
+}
+
+.drawing{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.flex-center{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.title{
+  font-size: 1.3em;
+  margin: 30px auto;
+  margin-bottom: 50px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.divided{
+  display: flex;
+  width: 80%;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+}
+.divided > * {
+  width: 50%;
+  text-align:left;
+}
+
+.check-option{
+  display: flex;
+  align-items: baseline;
+  align-items: center;
+  font-size: 0.7em;
+  font-weight: 400;
+  width: 100%;
+  margin: 10px auto;
+}
+.checkbox{
+  border: 3px solid #2D877A;
+  border-radius: 5px;
+  width: 12px;
+  height: 12px;
+  margin-right: 20px;
+}
+.check-option > input[type=checkbox]{
+  width: 20px;
+  margin-right: 10px;
+}
+.check-option > label{
+  width: 90%;
+}
+
+.orange-button{
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+  padding: 12px 40px;
+  font-size: 18px;
+  text-align: center;
+  background: #FD5730;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+  border: none;
+  align-self: center;
+  display: block;
+  margin: auto;
+}
+
+.number-input{
+    height: 35px;
+    width: 120px;
+    padding: 0;
+    background: white;
+    border: 2px solid #2D877A;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Pridi' !important;
+    font-size: 0.8em;
+    border-radius: 5px;
+}
+
+.with-pre{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.pre-input{
+  position: relative;
+  right: -2px;
+  width: 40px;
+  height: 35px;
+  color: white;
+  background: #2D877A;
+  border: 2px solid #2D877A;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 1em;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.align-baseline{
+  align-items: flex-start;
+  height: auto;
+}
+
+#email{
+width: 50%;
+height: 50px;
+margin: 20px auto;
+display: block;
+border: 2px solid #2D877A;
+}
+
+.email-block{
+  box-sizing: border-box;
+  padding: 50px;
+  width: 50%;
+  margin: auto
+}
+.age-block{
+  box-sizing: border-box;
+  padding: 50px;
+  /* height: 40%; */
+}
+
+#result{
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#submit{
+margin-top: 30px;
+
+}
+#age{
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  background: #2D877A;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  margin: auto;
+}
